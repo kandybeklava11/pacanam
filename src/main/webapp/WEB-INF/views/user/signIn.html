@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+        }
+        fieldset {
+            width: 300px;
+            margin: 0 auto;
+            border: none;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        h1.instagram {
+            text-align: center;
+            font-family: 'Pacifico', cursive;
+            color: #262626;
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="password"] {
+            width: calc(100% - 40px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3897f0;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #357ae8;
+        }
+        hr {
+            margin-top: 20px;
+            border: 0;
+            border-top: 1px solid #ccc;
+        }
+        a {
+            color: #3897f0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<fieldset>
+    <form>
+        <h1 class="instagram"><em>Instagram</em></h1>
+        <form action="#" th:action="@{/signIn/signInn}" th:object="${newUser}" method="POST">
+        <label>
+            <label for="userName"></label><input type="text" th:field="*{userName}" id="userName" required placeholder="Username">
+        </label>
+        <br><br>
+        <label>
+            <label for="password"></label><input type="password" th:field="*{password}" id="password" required placeholder="Password">
+
+        </label>
+        <br><br>
+        <button>Log in</button>
+        <br><br><br>
+        <hr>
+        <br><br>
+        <a href="https://ru-ru.facebook.com/">Log in with Facebook</a>
+        <br><br>
+<!--        <a href="password.html">Forgot password?</a>-->
+    </form>
+        </form>
+</fieldset>
+<fieldset>
+    <form>
+        <h4>Don't have an account? <a href="/signUp">Sign up</a></h4>
+    </form>
+</fieldset>
+</body>
+</html>
